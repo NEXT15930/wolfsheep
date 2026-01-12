@@ -1,26 +1,37 @@
 # Agent abstract class
+from constants import *
 import random
 
 class Agent:
-    def __init__(self, WIDTH, HEIGHT):
+    def __init__(self):
         self.x = random.randrange(0, WIDTH)
-        self.x = random.randrange(0, HEIGHT)
+        self.y = random.randrange(0, HEIGHT)
         
     def eat():
         pass
-    def move():
-        if random.randrange(0, 1) == 1:
-            self.x += random.choice(-1, 1)
+    def move(self):
+        moves = [-1, 1]
+        if random.randint(0, 1) == 1:
+            self.x += random.choice(moves)
+            print("test x")
+            print(self.x)
         else:
-            self.y += random.choice(-1, 1)
-        # Bring the object back into the screen
-        if self.x > 100:
-            self.x -= 1
-        else if self.x < 0:
-            self.x += 1
-        if self.y > 100:
-            self.y -= 1
-        else if self.y < 0:
-            self.y += 1
+            self.y += random.choice(moves)
+            print("test y")
+            print(self.y)
+        # Wrap around the screen
+        if self.x >= WIDTH:
+            self.x = 0
+        elif self.x < 0:
+            self.x = WIDTH-1
+        elif self.y >= HEIGHT:
+            self.y = 0
+        elif self.y < 0:
+            self.y = HEIGHT-1
+        return self.x, self.y
     def reproduce():
         pass
+
+
+test = Agent()
+test.move()
