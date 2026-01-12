@@ -2,9 +2,9 @@
 import random
 
 class Agent:
-    def __init__(self):
-        self.x = random.randrange(0, 100)
-        self.x = random.randrange(0, 100)
+    def __init__(self, WIDTH, HEIGHT):
+        self.x = random.randrange(0, WIDTH)
+        self.x = random.randrange(0, HEIGHT)
         
     def eat():
         pass
