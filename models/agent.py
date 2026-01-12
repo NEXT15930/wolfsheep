@@ -9,8 +9,10 @@ class Agent:
     def eat():
         pass
     def move():
-        self.x += random.randrange(-1, 1)
-        self.y += random.randrange(-1, 1)
+        if random.randrange(0, 1) == 1:
+            self.x += random.choice(-1, 1)
+        else:
+            self.y += random.choice(-1, 1)
         # Bring the object back into the screen
         if self.x > 100:
             self.x -= 1
