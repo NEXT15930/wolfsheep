@@ -6,9 +6,11 @@ class Agent:
     def __init__(self):
         self.x = random.randrange(0, WIDTH)
         self.y = random.randrange(0, HEIGHT)
+        self.energy = energy
         
     def eat():
         pass
+
     def move(self):
         moves = [-1, 1]
         if random.randint(0, 1) == 1:
@@ -28,7 +30,10 @@ class Agent:
             self.y = 0
         elif self.y < 0:
             self.y = HEIGHT-1
+
+        self.energy -= 1
         return self.x, self.y
+    
     def reproduce():
         pass
 
