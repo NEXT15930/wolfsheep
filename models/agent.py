@@ -6,7 +6,7 @@ class Agent:
     def __init__(self):
         self.x = random.randrange(0, WIDTH)
         self.y = random.randrange(0, HEIGHT)
-        self.energy = energy
+        self.energy = ENERGY
         
     def eat():
         pass
@@ -19,8 +19,6 @@ class Agent:
             print(self.x)
         else:
             self.y += random.choice(moves)
-            print("test y")
-            print(self.y)
         # Wrap around the screen
         if self.x >= WIDTH:
             self.x = 0
@@ -32,11 +30,19 @@ class Agent:
             self.y = HEIGHT-1
 
         self.energy -= 1
+        if self.energy <= 0:
+            self.die()
+        print(f"x: {self.x}\ny: {self.y}\nenergy: {self.energy}")
         return self.x, self.y
+
+    def die():
+        pass
     
     def reproduce():
         pass
 
 
 test = Agent()
+test.move()
+test.move()
 test.move()
