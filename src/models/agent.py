@@ -10,13 +10,14 @@ class Agent(ABC):
         self.energy = ENERGY
         self.alive = True
 
-    @property
-    def x(self):
-        return self.x
+    # This doesn't work for some reason
+    # @property
+    # def x(self):
+    #     return self.x
     
-    @property
-    def y(self):
-        return self.y
+    # @property
+    # def y(self):
+    #     return self.y
 
     def die(self):
         self.alive = False
