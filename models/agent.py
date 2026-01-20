@@ -1,5 +1,5 @@
 # Agent abstract class
-from constants import *
+from .constants import *
 import random
 
 class Agent:
@@ -7,6 +7,7 @@ class Agent:
         self.x = random.randrange(0, WIDTH)
         self.y = random.randrange(0, HEIGHT)
         self.energy = ENERGY
+        self.alive = True
         
     def eat():
         pass
@@ -15,8 +16,6 @@ class Agent:
         moves = [-1, 1]
         if random.randint(0, 1) == 1:
             self.x += random.choice(moves)
-            print("test x")
-            print(self.x)
         else:
             self.y += random.choice(moves)
         # Wrap around the screen
@@ -35,14 +34,8 @@ class Agent:
         print(f"x: {self.x}\ny: {self.y}\nenergy: {self.energy}")
         return self.x, self.y
 
-    def die():
-        pass
+    def die(self):
+        self.alive = False
     
     def reproduce():
         pass
-
-
-test = Agent()
-test.move()
-test.move()
-test.move()
