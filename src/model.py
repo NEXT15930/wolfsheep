@@ -20,6 +20,22 @@ class Model:
             if agent.x == x and agent.y == y and agent != caller:
                 agents_list.append(agent)
         return agents_list
+
+    def get_prey(self):
+        """ Returns the amount of prey alive """
+        prey_count = 0
+        for agent in self.agents:
+            if agent.type == "Prey":
+                prey_count += 1
+        return prey_count
+
+    def get_predator(self):
+        """ Returns the amount of predator alive """
+        predator_count = 0
+        for agent in self.agents:
+            if agent.type == "Predator":
+                predator_count += 1
+        return predator_count
         
     def step(self):
         # Randomize sequence for fairness
@@ -33,9 +49,8 @@ class Model:
                 # Move agents
                 agent.move()
 
-                # TODO interact
+                # Interact
                 agent.interact()
-                # TODO reproduce
 
                 # Clean up dead
                 if not agent.alive:
@@ -43,3 +58,4 @@ class Model:
                 step_counter += 1
 
         self.time += 1
+        print(len(self.agents))
