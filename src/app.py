@@ -10,6 +10,8 @@ def main():
     model = Model(seed=2)
     for i in range(PREY):
         model.add_agent(Prey(model))
+    for i in range(PREDATOR):
+        model.add_agent(Predator(model))
 
     # Loop
     for i in range(STEPS):
