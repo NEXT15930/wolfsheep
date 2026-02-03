@@ -5,8 +5,11 @@ import random
 class Prey(Agent):
 
     def interact(self):
-        pass
+        if len(self.model.agents_at(self, self.x, self.y)) == 0:
+            if random.randrange(0, REPRODUCE_RATE) == 1:
+                self.reproduce()
 
     def reproduce(self):
-        pass
+        self.model.add_agent(Prey(self.model))
+        print("Reproduce")
 

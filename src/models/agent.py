@@ -4,7 +4,8 @@ from abc import ABC, abstractmethod
 import random
 
 class Agent(ABC):
-    def __init__(self):
+    def __init__(self, model):
+        self.model = model
         self.x = random.randrange(0, WIDTH)
         self.y = random.randrange(0, HEIGHT)
         self.energy = ENERGY
@@ -41,7 +42,7 @@ class Agent(ABC):
         self.energy -= 1
         if self.energy <= 0:
             self.die()
-        print(f"x: {self.x}\ny: {self.y}\nenergy: {self.energy}")
+        # print(f"x: {self.x}\ny: {self.y}\nenergy: {self.energy}")
         return self.x, self.y
 
     @abstractmethod
