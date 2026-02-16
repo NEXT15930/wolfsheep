@@ -1,8 +1,13 @@
-# Constants file
+# Constants file, change these values to see how the model is affected
 
-# Model constants
+# Model constants/starting parameters
+SEED = 2
 WIDTH = 10
 HEIGHT = 10
+
+PREY = 10
+PREDATOR = 4
+STEPS = 300
 
 # Agent constants
 ENERGY = 10

@@ -1,6 +1,4 @@
 from .agent import Agent
-from .constants import *
-import random
 
 class Prey(Agent):
     """ Prey class """
@@ -10,10 +8,10 @@ class Prey(Agent):
 
     def interact(self):
         if len(self.model.agents_at(self, self.x, self.y)) == 0:
-            if random.randrange(0, PREY_REPRODUCE_RATE) == 1:
+            if self.model.rng.randrange(0, self.model.prey_reproduce_rate) == 1:
                 self.reproduce()
 
     def reproduce(self):
-        if self.energy >= REPRODUCE_THRESHOLD:
+        if self.energy >= self.model.reproduce_threshold:
             self.model.add_agent(Prey(self.model))
 

@@ -1,6 +1,4 @@
 from .agent import Agent
-from .constants import *
-import random
 
 class Predator(Agent):
     """ Predator class """
@@ -14,11 +12,11 @@ class Predator(Agent):
             for agent in agents_at_position:
                 if agent.type == "Prey":
                     agent.die()
-                    self.energy = ENERGY
+                    self.energy = self.model.energy
                     # Reproduce if they eat
-                    if random.randrange(0, PREDATOR_REPRODUCE_RATE) == 1:
+                    if self.model.rng.randrange(0, self.model.predator_reproduce_rate) == 1:
                         self.reproduce()
 
     def reproduce(self):
-        if self.energy >= REPRODUCE_THRESHOLD:
+        if self.energy >= self.model.reproduce_threshold:
             self.model.add_agent(Predator(self.model))

@@ -1,8 +1,16 @@
 import random
 
 class Model:
-    def __init__(self, seed):
+    def __init__(self, seed, energy, reproduce_threshold, width, height, prey_reproduce_rate, predator_reproduce_rate):
+        # Setting constants
         self.rng = random.Random(seed)
+        self.energy = energy
+        self.reproduce_threshold = reproduce_threshold
+        self.width = width
+        self.height = height
+        self.prey_reproduce_rate = prey_reproduce_rate
+        self.predator_reproduce_rate = predator_reproduce_rate
+        
         self.agents = []
         # Keep track of how long its run
         self.time = 0

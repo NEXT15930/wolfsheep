@@ -1,14 +1,19 @@
 from model import Model
 from models.prey import Prey
 from models.predator import Predator
+from constants import *
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-PREY = 10
-PREDATOR = 4
-STEPS = 300
-
-model = Model(seed=2)
+model = Model(
+    seed=SEED,
+    energy=ENERGY,
+    reproduce_threshold=REPRODUCE_THRESHOLD,
+    width=WIDTH,
+    height=HEIGHT,
+    prey_reproduce_rate=PREY_REPRODUCE_RATE,
+    predator_reproduce_rate=PREDATOR_REPRODUCE_RATE
+)
 # Data variables
 time = []
 prey_count = []

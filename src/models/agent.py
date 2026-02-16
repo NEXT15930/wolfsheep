@@ -1,43 +1,32 @@
 # Agent abstract class
-from .constants import *
 from abc import ABC, abstractmethod
-import random
 
 class Agent(ABC):
     def __init__(self, model):
         self.model = model
-        self.x = random.randrange(0, WIDTH)
-        self.y = random.randrange(0, HEIGHT)
-        self.energy = ENERGY
+        self.x = self.model.rng.randrange(0, self.model.width)
+        self.y = self.model.rng.randrange(0, self.model.height)
+        self.energy = self.model.energy
         self.alive = True
-
-    # This doesn't work for some reason
-    # @property
-    # def x(self):
-    #     return self.x
-    
-    # @property
-    # def y(self):
-    #     return self.y
 
     def die(self):
         self.alive = False
         
     def move(self):
         moves = [-1, 1]
-        if random.randint(0, 1) == 1:
-            self.x += random.choice(moves)
+        if self.model.rng.randint(0, 1) == 1:
+            self.x += self.model.rng.choice(moves)
         else:
-            self.y += random.choice(moves)
+            self.y += self.model.rng.choice(moves)
         # Wrap around the screen
-        if self.x >= WIDTH:
+        if self.x >= self.model.width:
             self.x = 0
         elif self.x < 0:
-            self.x = WIDTH-1
-        elif self.y >= HEIGHT:
+            self.x = self.model.width-1
+        elif self.y >= self.model.height:
             self.y = 0
         elif self.y < 0:
-            self.y = HEIGHT-1
+            self.y = self.model.height-1
 
         self.energy -= 1
         if self.energy <= 0:
