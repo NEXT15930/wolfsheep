@@ -1,6 +1,13 @@
 #+title: Agent Based Modelling: Prey vs. Predator
 #+startup: inlineimages
 
+* Table of Contents :toc:
+- [[#preview][Preview:]]
+- [[#instructions][Instructions]]
+  - [[#running-the-program][Running the program]]
+  - [[#changing-parameters][Changing parameters]]
+- [[#dependencies][Dependencies]]
+
 * Preview:
 [[./animation.gif]]
 * Instructions
