@@ -26,7 +26,7 @@ line2, = ax.plot([], [], label = "Predator count")
 ax.legend()
 ax.set_title("ABM: Prey vs Predator")
 ax.set_xlabel("Time")
-ax.set_ylim(0, 150)
+ax.set_ylim(0, VIEW_HEIGHT)
 ax.set_xlim(0, STEPS)
 
 def update(frame):

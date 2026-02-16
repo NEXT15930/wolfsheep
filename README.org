@@ -1,0 +1,15 @@
+#+title: Agent Based Modelling: Prey vs. Predator
+#+startup: inlineimages
+
+* Preview:
+[[./animation.gif]]
+* Instructions
+** Running the program
+Clone the program, make sure you have the Python dependencies, and run the [[./src/app.py][app.py]] file inside the src folder. Make sure your terminal is in the folder too.
+** Changing parameters
+All useful parameters and constants can be changed from the [[./src/constants.py][constants.py]] file in the src folder.
+
+* Dependencies
++ Python 3.13.11
++ Matplotlib 3.10.7
++ Numpy 2.3.4
