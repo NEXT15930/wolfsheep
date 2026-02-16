@@ -16,5 +16,4 @@ class Prey(Agent):
     def reproduce(self):
         if self.energy >= REPRODUCE_THRESHOLD:
             self.model.add_agent(Prey(self.model))
-            print("Prey reproduce")
 

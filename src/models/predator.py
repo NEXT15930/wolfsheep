@@ -14,7 +14,6 @@ class Predator(Agent):
             for agent in agents_at_position:
                 if agent.type == "Prey":
                     agent.die()
-                    print("Eat")
                     self.energy = ENERGY
                     # Reproduce if they eat
                     if random.randrange(0, PREDATOR_REPRODUCE_RATE) == 1:
@@ -23,4 +22,3 @@ class Predator(Agent):
     def reproduce(self):
         if self.energy >= REPRODUCE_THRESHOLD:
             self.model.add_agent(Predator(self.model))
-            print("Predator reproduce")

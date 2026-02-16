@@ -58,4 +58,3 @@ class Model:
                 step_counter += 1
 
         self.time += 1
-        print(len(self.agents))
